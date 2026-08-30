@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowRight, Check, GraduationCap, Menu, Zap } from "lucide-react";
+import { ArrowRight, Check, Menu, Zap } from "lucide-react";
 import { LessonOverlay } from "./lesson-overlay";
 
 const courses = [
@@ -109,7 +109,7 @@ function Hero({ onStart }: { onStart: () => void }) {
 }
 
 function Header() {
-  return <header><div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6"><div className="flex items-center gap-2"><span className="grid size-9 -rotate-3 place-items-center rounded-xl bg-[#3467eb] text-white shadow-[2px_2px_0_#171a20]"><GraduationCap className="size-5" /></span><b className="text-[15px] tracking-[-.03em]">Go Darslinker</b></div><div className="flex items-center gap-2"><span className="rounded-full bg-white px-3 py-2 text-[10px] font-black"><Zap className="mr-1 inline size-3 text-[#3467eb]" />80 XP</span><button aria-label="Menyuni ochish" className="grid size-9 place-items-center rounded-full border border-black/15"><Menu className="size-4" /></button></div></div></header>;
+  return <header className="sticky top-0 z-50 border-b border-[#3467eb]/15 bg-[#eef0f3]/80 pt-[env(safe-area-inset-top)] backdrop-blur-xl supports-[backdrop-filter]:bg-[#eef0f3]/65"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6"><div className="flex items-center"><Image src="/brand/go-darslinker-logo.svg" alt="Go Darslinker" width={53} height={53} priority className="size-[53px]" /><b className="-ml-2 text-[15px] font-bold tracking-[-.03em]" style={{ fontFamily: "Avenir Next, Avenir, 'Helvetica Neue', Arial, sans-serif" }}>Go Darslinker</b></div><div className="flex items-center gap-2"><span className="rounded-full border border-white/70 bg-white/65 px-3 py-2 text-[10px] font-black backdrop-blur-md"><Zap className="mr-1 inline size-3 text-[#3467eb]" />80 XP</span><button aria-label="Menyuni ochish" className="grid size-9 place-items-center rounded-full border border-black/15 bg-white/35 backdrop-blur-md transition hover:bg-white/65"><Menu className="size-4" /></button></div></div></header>;
 }
 
 function CourseRail({ onStart }: { onStart: () => void }) {
