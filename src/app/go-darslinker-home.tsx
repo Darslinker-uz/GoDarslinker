@@ -66,9 +66,10 @@ function Hero({ onStart }: { onStart: () => void }) {
         <div className="absolute inset-0">
           <Image src="/hero/go-darslinker-gateway.png" alt="Go Darslinker ilm darvozasi tomon ketayotgan talaba va uni kutib olayotgan professorlar" fill priority sizes="(max-width: 1024px) 100vw, 1280px" className="object-cover object-center" />
         </div>
-        <div className="relative z-10 max-w-[560px] px-10 pb-12 pt-12 lg:px-14 lg:pt-16" style={{ fontFamily }}>
+        <div className="absolute inset-y-0 right-0 z-[5] w-[70%] bg-gradient-to-l from-white from-40% via-white/85 to-transparent lg:w-[58%]" />
+        <div className="relative z-10 ml-auto max-w-[480px] px-8 pb-12 pt-12 lg:max-w-[520px] lg:px-12 lg:pt-16" style={{ fontFamily }}>
           <p className="text-[10px] font-bold uppercase tracking-[.22em] text-[#3467eb]">Beginner language campus</p>
-          <h1 className="mt-4 text-[clamp(3rem,7.1vw,7rem)] font-bold leading-[.89] tracking-[-.06em]">Gapirishni<br /><span className="text-[#343b46]">bugun</span> boshlang.</h1>
+          <h1 className="mt-4 text-[clamp(2.4rem,4.6vw,4.4rem)] font-bold leading-[.92] tracking-[-.04em]">Gapirishni<br /><span className="text-[#343b46]">bugun</span> boshlang.</h1>
           <p className="mt-5 max-w-md text-lg font-normal leading-8 tracking-[-.01em] text-[#686d76]">Ilm darvozasidan birinchi qadamni qo‘ying. Qisqa darslar bilan yangi tilda suhbatni boshlang.</p>
           <button onClick={onStart} className="mt-7 flex items-center gap-3 rounded-2xl border-2 border-[#171a20] bg-[#3467eb] px-7 py-4 text-sm font-bold text-white shadow-[4px_4px_0_#171a20] transition hover:-translate-y-0.5">Bepul boshlash <ArrowRight className="size-6" /></button>
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-bold">
