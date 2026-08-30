@@ -35,20 +35,46 @@ export function GoDarslinkerHome() {
 }
 
 function Hero({ onStart }: { onStart: () => void }) {
+  const fontFamily = "Avenir Next, Avenir, 'Helvetica Neue', Arial, sans-serif";
   return (
-    <section className="relative mt-3 aspect-[3/2] overflow-hidden rounded-[22px] border border-[#3467eb]/35 bg-white sm:aspect-auto sm:min-h-[620px] lg:mt-8">
-      <div className="absolute inset-0">
-        <Image src="/hero/go-darslinker-gateway.png" alt="Go Darslinker ilm darvozasi tomon ketayotgan talaba va uni kutib olayotgan professorlar" fill priority sizes="(max-width: 639px) 100vw, (max-width: 1024px) 100vw, 1280px" className="object-cover object-center" />
+    <section className="mt-3 lg:mt-8">
+      {/* Mobile: matn tepada, rasm ostida, tugma rasm ustida (o'ng-pastda) */}
+      <div className="sm:hidden">
+        <div style={{ fontFamily }}>
+          <p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#3467eb]">Beginner language campus</p>
+          <h1 className="mt-2 text-[2.35rem] font-bold leading-[.95] tracking-[-.03em]">
+            Gapirishni<br /><span className="text-[#343b46]">bugun</span> boshlang.
+          </h1>
+          <p className="mt-3 text-[14px] leading-[1.45] tracking-[-.01em] text-[#686d76]">
+            Ilm darvozasidan birinchi qadamni qo‘ying. Qisqa darslar bilan yangi tilda suhbatni boshlang.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3 text-[11px] font-bold">
+            <span className="flex items-center gap-1.5"><i className="grid size-5 place-items-center rounded-full bg-[#dfe3ea] text-[#343b46]"><Check className="size-2.5" /></i>Birinchi dars ochiq</span>
+            <span className="flex items-center gap-1.5"><i className="grid size-5 place-items-center rounded-full bg-[#dfe3ea] text-[#3467eb]"><Zap className="size-2.5" /></i>Kuniga 10 daqiqa</span>
+          </div>
+        </div>
+        <div className="relative mt-4 aspect-[3/2] overflow-hidden rounded-[22px] border border-[#3467eb]/35 bg-white">
+          <Image src="/hero/go-darslinker-gateway.png" alt="Go Darslinker ilm darvozasi tomon ketayotgan talaba va uni kutib olayotgan professorlar" fill sizes="100vw" className="object-cover object-center" />
+          <button onClick={onStart} className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-lg border border-[#171a20] bg-[#3467eb] px-3.5 py-2.5 text-[12px] font-bold text-white shadow-[2px_2px_0_#171a20] transition active:translate-y-0.5">
+            Bepul boshlash <ArrowRight className="size-3.5" />
+          </button>
+        </div>
       </div>
-      <div className="relative z-10 w-[56%] px-3 pt-4 sm:w-auto sm:max-w-[560px] sm:px-10 sm:pb-12 sm:pt-12 lg:px-14 lg:pt-16" style={{ fontFamily: "Avenir Next, Avenir, 'Helvetica Neue', Arial, sans-serif" }}>
-        <p className="text-[6px] font-bold uppercase tracking-[.18em] text-[#3467eb] sm:text-[10px] sm:tracking-[.22em]">Beginner language campus</p>
-        <h1 className="mt-2 text-[clamp(1.45rem,7.1vw,7rem)] font-bold leading-[.89] tracking-[-.06em] sm:mt-4">Gapirishni<br /><span className="text-[#343b46]">bugun</span> boshlang.</h1>
-        <p className="mt-2 text-[8px] font-normal leading-[1.35] tracking-[-.01em] text-[#686d76] sm:hidden">Qisqa darslar bilan yangi tilda suhbatni boshlang.</p>
-        <p className="mt-5 hidden max-w-md text-lg font-normal leading-8 tracking-[-.01em] text-[#686d76] sm:block">Ilm darvozasidan birinchi qadamni qo‘ying. Qisqa darslar bilan yangi tilda suhbatni boshlang.</p>
-        <button onClick={onStart} className="mt-3 flex items-center gap-1.5 rounded-lg border border-[#171a20] bg-[#3467eb] px-3 py-2 text-[8px] font-bold text-white shadow-[2px_2px_0_#171a20] transition hover:-translate-y-0.5 sm:mt-7 sm:gap-3 sm:rounded-2xl sm:border-2 sm:px-7 sm:py-4 sm:text-sm sm:shadow-[4px_4px_0_#171a20]">Bepul boshlash <ArrowRight className="size-3 sm:size-6" /></button>
-        <div className="mt-8 hidden flex-wrap gap-4 text-xs font-bold sm:flex">
-          <span className="flex items-center gap-2"><i className="grid size-6 place-items-center rounded-full bg-[#dfe3ea] text-[#343b46]"><Check className="size-3" /></i>Birinchi dars ochiq</span>
-          <span className="flex items-center gap-2"><i className="grid size-6 place-items-center rounded-full bg-[#dfe3ea] text-[#3467eb]"><Zap className="size-3" /></i>Kuniga 10 daqiqa</span>
+
+      {/* sm va undan katta: matn rasm ustida overlay (mavjud dizayn) */}
+      <div className="relative hidden overflow-hidden rounded-[22px] border border-[#3467eb]/35 bg-white sm:block sm:min-h-[620px]">
+        <div className="absolute inset-0">
+          <Image src="/hero/go-darslinker-gateway.png" alt="Go Darslinker ilm darvozasi tomon ketayotgan talaba va uni kutib olayotgan professorlar" fill priority sizes="(max-width: 1024px) 100vw, 1280px" className="object-cover object-center" />
+        </div>
+        <div className="relative z-10 max-w-[560px] px-10 pb-12 pt-12 lg:px-14 lg:pt-16" style={{ fontFamily }}>
+          <p className="text-[10px] font-bold uppercase tracking-[.22em] text-[#3467eb]">Beginner language campus</p>
+          <h1 className="mt-4 text-[clamp(3rem,7.1vw,7rem)] font-bold leading-[.89] tracking-[-.06em]">Gapirishni<br /><span className="text-[#343b46]">bugun</span> boshlang.</h1>
+          <p className="mt-5 max-w-md text-lg font-normal leading-8 tracking-[-.01em] text-[#686d76]">Ilm darvozasidan birinchi qadamni qo‘ying. Qisqa darslar bilan yangi tilda suhbatni boshlang.</p>
+          <button onClick={onStart} className="mt-7 flex items-center gap-3 rounded-2xl border-2 border-[#171a20] bg-[#3467eb] px-7 py-4 text-sm font-bold text-white shadow-[4px_4px_0_#171a20] transition hover:-translate-y-0.5">Bepul boshlash <ArrowRight className="size-6" /></button>
+          <div className="mt-8 flex flex-wrap gap-4 text-xs font-bold">
+            <span className="flex items-center gap-2"><i className="grid size-6 place-items-center rounded-full bg-[#dfe3ea] text-[#343b46]"><Check className="size-3" /></i>Birinchi dars ochiq</span>
+            <span className="flex items-center gap-2"><i className="grid size-6 place-items-center rounded-full bg-[#dfe3ea] text-[#3467eb]"><Zap className="size-3" /></i>Kuniga 10 daqiqa</span>
+          </div>
         </div>
       </div>
     </section>
