@@ -8,7 +8,6 @@ declare global {
       WebApp?: {
         ready: () => void;
         expand: () => void;
-        requestFullscreen?: () => void;
       };
     };
   }
@@ -20,7 +19,6 @@ export function TelegramInit() {
     if (!tg) return;
     tg.ready();
     tg.expand();
-    tg.requestFullscreen?.();
   }, []);
 
   return null;
