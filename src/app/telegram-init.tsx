@@ -8,6 +8,7 @@ declare global {
       WebApp?: {
         ready: () => void;
         expand: () => void;
+        disableVerticalSwipes?: () => void;
       };
     };
   }
@@ -19,6 +20,9 @@ export function TelegramInit() {
     if (!tg) return;
     tg.ready();
     tg.expand();
+    // Sahifa ichidagi oddiy scroll'ni Telegram'ning "pastga tortib
+    // yopish/kichraytirish" imo-ishorasi bilan aralashtirmasligi uchun.
+    tg.disableVerticalSwipes?.();
   }, []);
 
   return null;
